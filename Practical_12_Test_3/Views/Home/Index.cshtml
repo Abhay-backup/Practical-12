@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Practical_12_Test_3.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employees</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationId)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MobileNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesignationId)
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<div class="text-primary font-monospace" style="font-size:20px"> Various Functionalities : </div>
+
+
+<div>
+
+	@Html.ActionLink("Add Some Data in Tables", "InsertSomeDefaultData", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink("Write a query to count the number of records by designation name", "FetchTheEmployeePerDesignation", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink("Write a query to display First Name, Middle Name, Last Name & Designation name", "Query3", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink(" Create a database view that outputs Employee Id, First Name, Middle Name, Last Name, Designation, DOB, Mobile Number, Address & Salary", "CreateViewAndShowDataOfThatView", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink("Create a stored procedure to insert data into the Designation table with required parameters", "CreateTheStoreProcedureForInsertInDesignationTable", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink(" Create a stored procedure to insert data into the Employee table with required parameters", "CreateTheStoreProcedureForInsertInEmployeeTable", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink("Write a query that displays only those designation names that have more than 1 employee", "DesignationWhichHaveMoreThanOneEmployee", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink("Get The Data Which are sorted by Date of birth", "CreateStoredProcedureAndWhichGivesSortDatabyDOB", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+	@Html.ActionLink("Get the data which are sorted by First Name", "CreateStoredProcedureAndWhichGivesSortDatabyFirstName", string.Empty, new { @class = "btn btn-outline-success my-2 mx-2" })
+
+	@Html.ActionLink("Find Max Salary Employees", "MaxSalaryEmployees", string.Empty, new { @class = "btn btn-outline-success" })
+	@Html.ActionLink("create clustered index", "CreateClustredIndex", string.Empty, new { @class = "btn btn-outline-success" })
+    @Html.ActionLink("Truncate table", "Truncate", string.Empty, new { @class = "btn btn-danger" })
+
+</div>
